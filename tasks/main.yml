@@ -6,13 +6,12 @@
     params:
       files:
         - "{{ ansible_os_family }}-{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
-        - "{{ ansible_os_family }}-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
         - "{{ ansible_os_family }}-{{ ansible_distribution }}.yml"
         - "{{ ansible_os_family }}.yml"
       paths:
         - vars
 
-- include_tasks: install-pkgs.yml
+- import_tasks: install-pkgs.yml
   when: freeipa_client_install_pkgs
 
-- include_tasks: freeipa-client-install.yml
+- import_tasks: freeipa-client-install.yml

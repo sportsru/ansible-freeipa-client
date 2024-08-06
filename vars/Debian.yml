@@ -4,4 +4,3 @@
 # Type: List
 freeipa_client_pkgs:
   - freeipa-client
-  - realmd
